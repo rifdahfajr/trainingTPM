@@ -20,7 +20,7 @@ Route::get('/', function () {
 
 Route::get('/create', [BookController::class, 'getCreatePage'])->name('getCreatePage');
 
-Route::post('/create-book', [BookController::class, 'getCreatePage'])->name('createBook');
+Route::post('/create-book', [BookController::class, 'createBook'])->name('createBook');
 
 Route::get('/get-books', [BookController::class, 'getBooks'])->name('getBooks');
 
