@@ -20,6 +20,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Title</th>
                 <th scope="col">Author</th>
+                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,14 @@
             <th scope="row">{{$book->id}}</th>
             <td>{{$book->title}}</td>
             <td>{{$book->author}}</td>
+            <td>
+                <a href=""{{route('getBookById', ['id'=>$book->id])}}"><button type="button" class="btn btn-success">Edit</button></a>
+                <form action="{{route('delete', ['id'=>$book->id])}}" method="">
+                    @csrf
+                    @method('delete')
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
             </tr>
             @endforeach
         </tbody>

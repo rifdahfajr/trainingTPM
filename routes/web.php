@@ -24,6 +24,12 @@ Route::post('/create-book', [BookController::class, 'createBook'])->name('create
 
 Route::get('/get-books', [BookController::class, 'getBooks'])->name('getBooks');
 
+Route::get('/update-book/{id}', [BookController::class, 'getBookById'])->name('getBookById');
+
+Route::patch('/update-book/{id}', [BookController::class, 'updateBook'])->name('updateBook');
+
+Route::delete('/delete-book/{id}', [BookController::class, 'deleteBook'])->name('delete');
+
 Route::get('/hello', function () {
     echo ('Hello World');
 });
